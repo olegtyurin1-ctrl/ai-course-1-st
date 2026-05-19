@@ -1,666 +1,543 @@
 <!DOCTYPE html>
-<html lang="ru" class="scroll-smooth">
+<html lang="ru" class="dark scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luxe Auto — премиум автомобили в Москве | Купить Porsche, BMW, Mercedes</title>
-    
-    <!-- SEO Meta -->
-    <meta name="description" content="Премиум автодилер Luxe Auto в Москве. Porsche, BMW, Mercedes в наличии. Trade-in за 1 час, кредит от 4.9%, тест-драйв. Индивидуальный подход и закрытые показы.">
-    <meta name="keywords" content="купить премиум автомобиль, автосалон Москва, Porsche, BMW, Mercedes, люкс авто, авто в наличии, trade-in, тест-драйв">
+    <meta name="description" content="LX LUXE AUTO: премиальные автомобили в наличии и под заказ с диагностикой, юридической проверкой, trade-in и доставкой по РФ.">
+    <title>LX LUXE AUTO | Легендарные автомобили с прозрачной историей</title>
 
-    <!-- Open Graph / Social -->
-    <meta property="og:title" content="Luxe Auto — премиум автомобили в Москве">
-    <meta property="og:description" content="Porsche, BMW, Mercedes в наличии. Trade-in, кредит 4.9%, тест-драйв. Индивидуальный подход.">
-    <meta property="og:url" content="https://luxe-auto.ru">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&q=80&w=1200">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:locale" content="ru_RU">
-    
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Luxe Auto — премиум автомобили в Москве">
-    <meta name="twitter:description" content="Porsche, BMW, Mercedes в наличии. Trade-in, кредит 4.9%, тест-драйв.">
-    <meta name="twitter:image" content="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&q=80&w=1200">
-
-    <!-- Canonical -->
-    <link rel="canonical" href="https://luxe-auto.ru">
-
-    <!-- Favicon (SVG inline) -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#127937;</text></svg>">
-    
-    <!-- Google Fonts: Montserrat -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Alpine.js CDN -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&amp;family=Playfair+Display:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    
-    <!-- Font Awesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <!-- Inputmask for phone masking -->
-    <script src="https://cdn.jsdelivr.net/npm/inputmask@5/dist/inputmask.min.js"></script>
-
-    <!-- AOS удалён — при открытии через file:// протокол возникала проблема с opacity -->
 
     <script>
         tailwind.config = {
+            darkMode: 'class',
             theme: {
                 extend: {
                     colors: {
-                        primary: '#3b82f6',
-                        accent: '#60a5fa',
-                        dark: '#09090b',
+                        background: '#141313',
+                        surface: '#141313',
+                        panel: '#201f1f',
+                        panelHigh: '#2b2a2a',
+                        graphite: '#353434',
+                        platinum: '#e5e2e1',
+                        muted: '#c4c7c7',
+                        silver: '#c9c6c5',
+                        gold: '#e9c349',
+                        goldSoft: '#ffe088',
+                        ink: '#313030'
                     },
                     fontFamily: {
                         sans: ['Montserrat', 'sans-serif'],
+                        display: ['Playfair Display', 'serif']
                     },
+                    boxShadow: {
+                        glow: '0 24px 80px rgba(233, 195, 73, 0.12)'
+                    }
                 }
             }
         }
     </script>
 
     <style>
+        body {
+            background: #141313;
+            color: #e5e2e1;
+            overflow-x: hidden;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            line-height: 1;
+        }
+
         .glass {
-            background: rgba(9, 9, 11, 0.7);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(20, 19, 19, 0.76);
+            border-bottom: 1px solid rgba(201, 198, 197, 0.14);
+            backdrop-filter: blur(22px);
+            -webkit-backdrop-filter: blur(22px);
         }
-        .car-card:hover img {
-            transform: scale(1.05);
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.035);
+            border: 1px solid rgba(201, 198, 197, 0.15);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
         }
-        [x-cloak] { display: none !important; }
+
+        .hero-mask {
+            background:
+                linear-gradient(90deg, #141313 0%, rgba(20, 19, 19, 0.82) 38%, rgba(20, 19, 19, 0.18) 100%),
+                linear-gradient(0deg, #141313 0%, rgba(20, 19, 19, 0) 32%);
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        [x-cloak] {
+            display: none !important;
+        }
     </style>
-
-    <!-- Schema.org: LocalBusiness + FAQPage + Product -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "AutoDealer",
-        "name": "Luxe Auto",
-        "description": "Премиум автодилер в Москве. Porsche, BMW, Mercedes в наличии.",
-        "url": "https://luxe-auto.ru",
-        "telephone": "+79001234567",
-        "email": "info@luxe-auto.ru",
-        "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Москва",
-            "streetAddress": "ул. Автомобильная, 22",
-            "addressCountry": "RU"
-        },
-        "openingHoursSpecification": [
-            {
-                "@type": "OpeningHoursSpecification",
-                "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
-                "opens": "09:00",
-                "closes": "21:00"
-            }
-        ],
-        "priceRange": "₽₽₽₽",
-        "image": "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&q=80&w=1920",
-        "sameAs": [
-            "https://t.me/luxeauto",
-            "https://wa.me/79001234567",
-            "https://youtube.com/@luxeauto",
-            "https://vk.com/luxeauto"
-        ]
-    }
-    </script>
-
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-            {
-                "@type": "Question",
-                "name": "Какие документы нужны для покупки в кредит?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Для оформления заявки достаточно паспорта и водительского удостоверения. Решение банка занимает от 15 минут до 1 часа прямо в нашем салоне."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Как проходит процедура тест-драйва?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Тест-драйв проводится по предварительной записи. Вам необходимо иметь при себе стаж вождения от 2-х лет. Маршрут включает городские условия и скоростную трассу."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Все ли автомобили с ПТС в наличии?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Да, 100% представленных в шоуруме автомобилей имеют оригинальный бумажный или электронный ПТС и готовы к сделке в день обращения."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Возможна ли доставка в другой регион?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Мы осуществляем доставку крытым автовозом в любую точку РФ. Транспортировка застрахована на полную стоимость автомобиля."
-                }
-            }
-        ]
-    }
-    </script>
-
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Product",
-        "name": "Porsche 911 Turbo S",
-        "description": "Премиум спортивный автомобиль Porsche 911 Turbo S, 650 л.с., разгон 2.7с до 100 км/ч",
-        "offers": {
-            "@type": "Offer",
-            "price": "24500000",
-            "priceCurrency": "RUB",
-            "availability": "https://schema.org/InStock"
-        }
-    }
-    </script>
 </head>
-<body class="bg-dark text-gray-100 font-sans antialiased">
-
-    <!-- Header / Navigation -->
-    <header 
-        x-data="{ mobileMenu: false, scrolled: false }" 
-        @scroll.window="scrolled = (window.pageYOffset > 20)"
-        :class="scrolled ? 'glass py-3' : 'bg-transparent py-5'"
-        class="fixed top-0 w-full z-50 transition-all duration-300"
+<body class="font-sans antialiased">
+    <header
+        id="header"
+        x-data="{ mobileMenu: false, scrolled: false }"
+        @scroll.window="scrolled = (window.pageYOffset > 40)"
+        :class="scrolled ? 'glass py-3' : 'bg-surface/10 py-5'"
+        class="fixed top-0 z-50 w-full transition-all duration-500"
     >
-        <div class="container mx-auto px-4 md:px-6 flex justify-between items-center">
-            <a href="#" class="text-2xl font-extrabold tracking-tighter text-white flex items-center gap-2">
-                <span class="bg-primary p-1 rounded">LX</span>
-                <span>LUXE AUTO</span>
+        <nav class="mx-auto flex max-w-[1440px] items-center justify-between gap-6 px-5 md:px-10 lg:px-20">
+            <a href="#" class="font-display text-3xl font-semibold tracking-normal text-silver" aria-label="LX LUXE AUTO">
+                LX <span class="text-gold">LUXE</span> AUTO
             </a>
-            <nav class="hidden lg:flex space-x-8 font-medium text-sm uppercase tracking-widest">
-                <a href="#inventory" class="hover:text-primary transition">Автомобили</a>
-                <a href="#why-us" class="hover:text-primary transition">Преимущества</a>
-                <a href="#how-we-work" class="hover:text-primary transition">Как купить</a>
-                <a href="#reviews" class="hover:text-primary transition">Отзывы</a>
-                <a href="#faq" class="hover:text-primary transition">FAQ</a>
-                <a href="#contacts" class="hover:text-primary transition">Контакты</a>
-            </nav>
-            <div class="hidden lg:flex items-center gap-6">
-                <a href="tel:+79001234567" class="text-sm font-bold hover:text-primary transition">+7 (900) 123-45-67</a>
-                <button @click="$dispatch('open-modal')" class="bg-primary hover:bg-blue-600 px-6 py-2.5 rounded-full text-sm font-bold transition-all shadow-lg shadow-primary/20">
-                    Заказать звонок
+
+            <div class="hidden items-center gap-8 text-[13px] font-semibold uppercase tracking-[0.16em] text-muted lg:flex">
+                <a href="#inventory" class="border-b border-gold pb-1 text-gold">Автомобили</a>
+                <a href="#process" class="transition hover:text-silver">Как купить</a>
+                <a href="#why-us" class="transition hover:text-silver">Проверка</a>
+                <a href="#faq" class="transition hover:text-silver">FAQ</a>
+                <a href="#contacts" class="transition hover:text-silver">Контакты</a>
+            </div>
+
+            <div class="hidden items-center gap-5 lg:flex">
+                <a href="tel:+79001234567" class="font-display text-xl text-silver transition hover:text-gold">+7 (900) 123-45-67</a>
+                <button @click="$dispatch('open-modal')" class="bg-silver px-6 py-3 text-xs font-bold uppercase tracking-[0.14em] text-ink transition hover:bg-gold">
+                    Записаться
                 </button>
             </div>
-            <button @click="mobileMenu = !mobileMenu" class="lg:hidden text-2xl" aria-label="Открыть меню">
-                <i class="fa-solid" :class="mobileMenu ? 'fa-xmark' : 'fa-bars-staggered'"></i>
+
+            <button @click="mobileMenu = !mobileMenu" class="flex h-11 w-11 items-center justify-center border border-silver/15 text-silver lg:hidden" aria-label="Открыть меню">
+                <span class="material-symbols-outlined" x-text="mobileMenu ? 'close' : 'menu'"></span>
             </button>
-        </div>
-        <div x-show="mobileMenu" 
-             x-transition:enter="transition ease-out duration-200"
-             x-transition:enter-start="opacity-0 -translate-y-4"
-             x-transition:enter-end="opacity-100 translate-y-0"
-             x-cloak
-             class="lg:hidden absolute top-full left-0 w-full bg-zinc-900 border-b border-white/10 py-6 px-4 space-y-4 flex flex-col items-center shadow-2xl">
-            <a @click="mobileMenu = false" href="#inventory" class="text-lg uppercase">Автомобили</a>
-            <a @click="mobileMenu = false" href="#why-us" class="text-lg uppercase">Преимущества</a>
-            <a @click="mobileMenu = false" href="#how-we-work" class="text-lg uppercase">Как купить</a>
-            <a @click="mobileMenu = false" href="#reviews" class="text-lg uppercase">Отзывы</a>
-            <a @click="mobileMenu = false" href="#faq" class="text-lg uppercase">FAQ</a>
-            <a @click="mobileMenu = false" href="#contacts" class="text-lg uppercase">Контакты</a>
-            <a href="tel:+79001234567" class="text-primary font-bold text-xl">+7 (900) 123-45-67</a>
-            <button @click="mobileMenu = false; $dispatch('open-modal')" class="w-full bg-primary py-4 rounded-xl font-bold">Заказать звонок</button>
+        </nav>
+
+        <div
+            x-show="mobileMenu"
+            x-transition
+            x-cloak
+            class="absolute left-0 top-full w-full border-y border-silver/10 bg-[#0e0e0e] px-5 py-7 shadow-2xl lg:hidden"
+        >
+            <nav class="flex flex-col gap-5 text-center text-sm font-semibold uppercase tracking-[0.16em] text-muted">
+                <a @click="mobileMenu = false" href="#inventory">Автомобили</a>
+                <a @click="mobileMenu = false" href="#process">Как купить</a>
+                <a @click="mobileMenu = false" href="#why-us">Проверка</a>
+                <a @click="mobileMenu = false" href="#faq">FAQ</a>
+                <a @click="mobileMenu = false" href="#contacts">Контакты</a>
+                <a href="tel:+79001234567" class="font-display text-2xl normal-case tracking-normal text-gold">+7 (900) 123-45-67</a>
+                <button @click="mobileMenu = false; $dispatch('open-modal')" class="bg-silver px-6 py-4 text-xs font-bold uppercase tracking-[0.16em] text-ink">
+                    Получить подбор
+                </button>
+            </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="relative h-screen flex items-center overflow-hidden">
-        <div class="absolute inset-0 z-0">
-            <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&q=80&w=1920" 
-                 alt="Премиум спортивный автомобиль Porsche на дороге — Luxe Auto Moscow"
-                 loading="eager"
-                 class="w-full h-full object-cover">
-            <div class="absolute inset-0 bg-gradient-to-r from-dark via-dark/60 to-transparent"></div>
-        </div>
-        <div class="container mx-auto px-4 md:px-6 relative z-10">
-            <div class="max-w-3xl">
-                <span class="inline-block px-4 py-1 border border-primary text-primary rounded-full text-xs font-bold uppercase tracking-widest mb-6">Премиальный дилер 2024 в Москве</span>
-                <h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-6">
-                    Легендарные <br> <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">премиум автомобили</span> в наличии
-                </h1>
-                <p class="text-gray-300 text-lg md:text-xl mb-10 max-w-xl leading-relaxed">
-                    Почувствуйте истинное совершенство инженерии. Индивидуальный подход, закрытые показы и лучшие условия по Trade-in в Москве.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="#inventory" class="bg-primary hover:bg-blue-600 text-center px-10 py-4 rounded-2xl font-bold text-lg transition-all transform hover:scale-105">
-                        Выбрать автомобиль
-                    </a>
-                    <button @click="$dispatch('open-modal')" class="bg-white/10 hover:bg-white/20 backdrop-blur-md text-center px-10 py-4 rounded-2xl font-bold text-lg transition-all border border-white/10 cursor-pointer">
-                        Тест-драйв
-                    </button>
-                </div>
+    <main>
+        <section class="relative flex min-h-screen items-center overflow-hidden pt-28">
+            <div class="absolute inset-0">
+                <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&amp;fit=crop&amp;q=90&amp;w=2200" alt="Премиальный спортивный автомобиль на дороге" class="h-full w-full scale-105 object-cover">
+                <div class="hero-mask absolute inset-0"></div>
             </div>
-        </div>
-        <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-dark to-transparent"></div>
-    </section>
 
-    <!-- Inventory Section -->
-    <section id="inventory" class="py-24 container mx-auto px-4 md:px-6">
-        <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
-            <div>
-                <h2 class="text-3xl md:text-4xl font-bold mb-4 uppercase italic tracking-tighter">Актуальные предложения</h2>
-                <div class="h-1.5 w-24 bg-primary"></div>
-            </div>
-            <p class="text-gray-400 max-w-md italic">Каждый автомобиль прошел комплексную диагностику и детейлинг-подготовку.</p>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Car Card 1 -->
-            <div class="car-card group bg-zinc-900/50 rounded-3xl overflow-hidden border border-white/5 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10">
-                <div x-data="{ currentSlide: 0, slides: [
-                    'https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?auto=format&fit=crop&q=80&w=800',
-                    'https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?auto=format&fit=crop&q=80&w=800&fit=facearea'
-                ] }" class="relative overflow-hidden h-64">
-                    <img :src="slides[currentSlide]" 
-                         class="w-full h-full object-cover transition-transform duration-700" 
-                         alt="Porsche 911 Turbo S 2024 — спортивный купе синего цвета в салоне Luxe Auto"
-                         loading="lazy">
-                    <div class="absolute top-4 right-4 bg-dark/80 backdrop-blur px-3 py-1 rounded-full text-xs font-bold">В наличии</div>
-                    <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2">
-                        <template x-for="(slide, i) in slides" :key="i">
-                            <button @click="currentSlide = i" 
-                                    :class="currentSlide === i ? 'bg-primary w-6' : 'bg-white/40 w-2'" 
-                                    class="h-2 rounded-full transition-all duration-300"></button>
-                        </template>
+            <div class="relative z-10 mx-auto w-full max-w-[1440px] px-5 py-20 md:px-10 lg:px-20">
+                <div class="max-w-3xl">
+                    <span class="mb-7 inline-flex border border-gold/40 bg-gold/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-gold backdrop-blur">
+                        37 автомобилей в наличии и под заказ
+                    </span>
+                    <h1 class="font-display text-5xl font-bold leading-tight tracking-normal text-platinum md:text-7xl lg:text-8xl">
+                        Легендарные <span class="block italic text-gold">автомобили</span>
+                    </h1>
+                    <p class="mt-7 max-w-2xl text-base leading-8 text-muted md:text-lg">
+                        Подбираем, проверяем и оформляем спорткары, бизнес-седаны и люксовые SUV. Диагностика по 120 пунктам, юридическая проверка, trade-in и доставка по РФ.
+                    </p>
+                    <div class="mt-10 flex flex-col gap-4 sm:flex-row">
+                        <a href="#inventory" class="bg-silver px-9 py-4 text-center text-sm font-bold uppercase tracking-[0.14em] text-ink transition hover:bg-gold">
+                            Смотреть каталог
+                        </a>
+                        <button @click="$dispatch('open-modal')" class="border border-silver/25 px-9 py-4 text-center text-sm font-bold uppercase tracking-[0.14em] text-silver backdrop-blur transition hover:border-gold hover:text-gold">
+                            Получить подбор
+                        </button>
                     </div>
-                </div>
-                <div class="p-8">
-                    <h3 class="text-2xl font-bold mb-2">Porsche 911 Turbo S</h3>
-                    <p class="text-primary text-xl font-bold mb-6 italic">от 24 500 000 ₽</p>
-                    <div class="grid grid-cols-2 gap-y-3 gap-x-4 mb-8 text-sm text-gray-400">
-                        <div class="flex items-center gap-2"><i class="fa-solid fa-gauge-high text-primary"></i> 650 л.с.</div>
-                        <div class="flex items-center gap-2"><i class="fa-solid fa-bolt text-primary"></i> 2.7с до 100</div>
-                        <div class="flex items-center gap-2"><i class="fa-solid fa-calendar text-primary"></i> 2024 г.</div>
-                        <div class="flex items-center gap-2"><i class="fa-solid fa-gauge text-primary"></i> 0 км</div>
-                    </div>
-                    <button @click="$dispatch('open-modal')" class="w-full py-4 border border-white/10 rounded-2xl group-hover:bg-primary group-hover:border-primary transition-all font-bold uppercase tracking-widest text-sm">
-                        Узнать больше
-                    </button>
                 </div>
             </div>
-            <!-- Car Card 2 -->
-            <div class="car-card group bg-zinc-900/50 rounded-3xl overflow-hidden border border-white/5 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10">
-                <div x-data="{ currentSlide: 0, slides: [
-                    'https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&q=80&w=800',
-                    'https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&q=80&w=800&fit=facearea'
-                ] }" class="relative overflow-hidden h-64">
-                    <img :src="slides[currentSlide]" 
-                         class="w-full h-full object-cover transition-transform duration-700" 
-                         alt="BMW M8 Competition 2024 — мощное купе темного цвета в автосалоне Москвы"
-                         loading="lazy">
-                    <div class="absolute top-4 right-4 bg-dark/80 backdrop-blur px-3 py-1 rounded-full text-xs font-bold">В наличии</div>
-                    <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2">
-                        <template x-for="(slide, i) in slides" :key="i">
-                            <button @click="currentSlide = i" 
-                                    :class="currentSlide === i ? 'bg-primary w-6' : 'bg-white/40 w-2'" 
-                                    class="h-2 rounded-full transition-all duration-300"></button>
-                        </template>
-                    </div>
-                </div>
-                <div class="p-8">
-                    <h3 class="text-2xl font-bold mb-2">BMW M8 Competition</h3>
-                    <p class="text-primary text-xl font-bold mb-6 italic">от 18 900 000 ₽</p>
-                    <div class="grid grid-cols-2 gap-y-3 gap-x-4 mb-8 text-sm text-gray-400">
-                        <div class="flex items-center gap-2"><i class="fa-solid fa-gauge-high text-primary"></i> 625 л.с.</div>
-                        <div class="flex items-center gap-2"><i class="fa-solid fa-bolt text-primary"></i> 3.2с до 100</div>
-                        <div class="flex items-center gap-2"><i class="fa-solid fa-calendar text-primary"></i> 2024 г.</div>
-                        <div class="flex items-center gap-2"><i class="fa-solid fa-gauge text-primary"></i> 0 км</div>
-                    </div>
-                    <button @click="$dispatch('open-modal')" class="w-full py-4 border border-white/10 rounded-2xl group-hover:bg-primary group-hover:border-primary transition-all font-bold uppercase tracking-widest text-sm">
-                        Узнать больше
-                    </button>
-                </div>
-            </div>
-            <!-- Car Card 3 -->
-            <div class="car-card group bg-zinc-900/50 rounded-3xl overflow-hidden border border-white/5 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10">
-                <div x-data="{ currentSlide: 0, slides: [
-                    'https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&q=80&w=800',
-                    'https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&q=80&w=800&fit=facearea'
-                ] }" class="relative overflow-hidden h-64">
-                    <img :src="slides[currentSlide]" 
-                         class="w-full h-full object-cover transition-transform duration-700" 
-                         alt="Mercedes-AMG GT 2024 — премиальное купе серебристого цвета в наличии"
-                         loading="lazy">
-                    <div class="absolute top-4 right-4 bg-dark/80 backdrop-blur px-3 py-1 rounded-full text-xs font-bold">Под заказ</div>
-                    <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2">
-                        <template x-for="(slide, i) in slides" :key="i">
-                            <button @click="currentSlide = i" 
-                                    :class="currentSlide === i ? 'bg-primary w-6' : 'bg-white/40 w-2'" 
-                                    class="h-2 rounded-full transition-all duration-300"></button>
-                        </template>
-                    </div>
-                </div>
-                <div class="p-8">
-                    <h3 class="text-2xl font-bold mb-2">Mercedes-AMG GT</h3>
-                    <p class="text-primary text-xl font-bold mb-6 italic">от 16 200 000 ₽</p>
-                    <div class="grid grid-cols-2 gap-y-3 gap-x-4 mb-8 text-sm text-gray-400">
-                        <div class="flex items-center gap-2"><i class="fa-solid fa-gauge-high text-primary"></i> 585 л.с.</div>
-                        <div class="flex items-center gap-2"><i class="fa-solid fa-bolt text-primary"></i> 3.6с до 100</div>
-                        <div class="flex items-center gap-2"><i class="fa-solid fa-calendar text-primary"></i> 2023 г.</div>
-                        <div class="flex items-center gap-2"><i class="fa-solid fa-gauge text-primary"></i> 200 км</div>
-                    </div>
-                    <button @click="$dispatch('open-modal')" class="w-full py-4 border border-white/10 rounded-2xl group-hover:bg-primary group-hover:border-primary transition-all font-bold uppercase tracking-widest text-sm">
-                        Узнать больше
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Why Us Section -->
-    <section id="why-us" class="py-24 bg-zinc-900/30">
-        <div class="container mx-auto px-4 md:px-6">
-            <h2 class="text-center text-3xl md:text-4xl font-bold mb-16 uppercase tracking-tight">Почему выбирают Luxe Auto</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 text-center">
-                <div class="flex flex-col items-center">
-                    <div class="w-16 h-16 bg-primary/10 text-primary rounded-2xl flex items-center justify-center text-3xl mb-6">
-                        <i class="fa-solid fa-shield-halved"></i>
-                    </div>
-                    <h4 class="text-xl font-bold mb-3">5 лет гарантии</h4>
-                    <p class="text-gray-400 text-sm">Полная техническая поддержка и обслуживание на весь срок.</p>
-                </div>
-                <div class="flex flex-col items-center">
-                    <div class="w-16 h-16 bg-primary/10 text-primary rounded-2xl flex items-center justify-center text-3xl mb-6">
-                        <i class="fa-solid fa-handshake"></i>
-                    </div>
-                    <h4 class="text-xl font-bold mb-3">Trade-in за 1 час</h4>
-                    <p class="text-gray-400 text-sm">Честная оценка вашего авто выше рыночной стоимости.</p>
-                </div>
-                <div class="flex flex-col items-center">
-                    <div class="w-16 h-16 bg-primary/10 text-primary rounded-2xl flex items-center justify-center text-3xl mb-6">
-                        <i class="fa-solid fa-percentage"></i>
-                    </div>
-                    <h4 class="text-xl font-bold mb-3">Кредит от 4.9%</h4>
-                    <p class="text-gray-400 text-sm">Специальные условия от ведущих банков-партнеров.</p>
-                </div>
-                <div class="flex flex-col items-center">
-                    <div class="w-16 h-16 bg-primary/10 text-primary rounded-2xl flex items-center justify-center text-3xl mb-6">
-                        <i class="fa-solid fa-headset"></i>
-                    </div>
-                    <h4 class="text-xl font-bold mb-3">Сервис 24/7</h4>
-                    <p class="text-gray-400 text-sm">Персональный менеджер доступен для вас в любое время.</p>
-                </div>
+            <div class="absolute bottom-10 right-20 z-10 hidden text-right lg:block">
+                <p class="text-xs font-semibold uppercase tracking-[0.22em] text-muted">Свяжитесь с нами</p>
+                <a href="tel:+79001234567" class="mt-2 block font-display text-3xl text-silver transition hover:text-gold">+7 (900) 123-45-67</a>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- How We Work Section -->
-    <section id="how-we-work" class="py-24 container mx-auto px-4 md:px-6">
-        <h2 class="text-center text-3xl md:text-4xl font-bold mb-16 uppercase tracking-tight">Как купить автомобиль</h2>
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
-            <div class="hidden md:block absolute top-16 left-[12.5%] right-[12.5%] h-0.5 bg-gradient-to-r from-primary via-accent to-primary opacity-30"></div>
-            <div class="flex flex-col items-center text-center relative">
-                <div class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center text-2xl font-black mb-6 relative z-10 shadow-lg shadow-primary/30">1</div>
-                <h4 class="text-xl font-bold mb-3">Выберите авто</h4>
-                <p class="text-gray-400 text-sm leading-relaxed">Изучите каталог или приходите в шоурум для личного осмотра.</p>
-            </div>
-            <div class="flex flex-col items-center text-center relative">
-                <div class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center text-2xl font-black mb-6 relative z-10 shadow-lg shadow-primary/30">2</div>
-                <h4 class="text-xl font-bold mb-3">Тест-драйв</h4>
-                <p class="text-gray-400 text-sm leading-relaxed">Почувствуйте автомобиль лично на специальном маршруте.</p>
-            </div>
-            <div class="flex flex-col items-center text-center relative">
-                <div class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center text-2xl font-black mb-6 relative z-10 shadow-lg shadow-primary/30">3</div>
-                <h4 class="text-xl font-bold mb-3">Оформление</h4>
-                <p class="text-gray-400 text-sm leading-relaxed">Кредит, Trade-in или наличные — мы подберем лучший вариант.</p>
-            </div>
-            <div class="flex flex-col items-center text-center relative">
-                <div class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center text-2xl font-black mb-6 relative z-10 shadow-lg shadow-primary/30">4</div>
-                <h4 class="text-xl font-bold mb-3">Доставка</h4>
-                <p class="text-gray-400 text-sm leading-relaxed">Заберите авто в салоне или закажите доставку в ваш город.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Reviews Section -->
-    <section id="reviews" class="py-24 bg-zinc-900/30">
-        <div class="container mx-auto px-4 md:px-6">
-            <h2 class="text-center text-3xl md:text-4xl font-bold mb-6 uppercase tracking-tight">Отзывы клиентов</h2>
-            <p class="text-center text-gray-400 mb-16 italic max-w-xl mx-auto">Более 500 довольных клиентов с 2020 года</p>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-zinc-900/50 border border-white/5 rounded-3xl p-8 transition-all hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5">
-                    <div class="flex items-center gap-1 text-yellow-500 mb-4">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                    </div>
-                    <p class="text-gray-300 mb-6 leading-relaxed">«Купил Porsche 911 Turbo S. Всё прошло идеально: профессиональная консультация, честный Trade-in моего авто, быстрый кредит. Через 3 часа уже уехал на новой машине!»</p>
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center text-primary font-bold text-xl">А</div>
-                        <div>
-                            <p class="font-bold">Александр М.</p>
-                            <p class="text-gray-500 text-sm">Владелец Porsche 911</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-zinc-900/50 border border-white/5 rounded-3xl p-8 transition-all hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5">
-                    <div class="flex items-center gap-1 text-yellow-500 mb-4">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                    </div>
-                    <p class="text-gray-300 mb-6 leading-relaxed">«Очень доволен сервисом. Выбрал BMW M8, помогли с индивидуальной комплектацией. Отдельное спасибо за доставку в Санкт-Петербург — всё под ключ.»</p>
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center text-primary font-bold text-xl">Д</div>
-                        <div>
-                            <p class="font-bold">Дмитрий К.</p>
-                            <p class="text-gray-500 text-sm">Владелец BMW M8</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-zinc-900/50 border border-white/5 rounded-3xl p-8 transition-all hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5">
-                    <div class="flex items-center gap-1 text-yellow-500 mb-4">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                    </div>
-                    <p class="text-gray-300 mb-6 leading-relaxed">«Покупал Mercedes-AMG GT. Понравился индивидуальный подход: закрытый показ, шампанское, подробный рассказ об авто. Чувствуешь себя VIP-клиентом.»</p>
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center text-primary font-bold text-xl">Е</div>
-                        <div>
-                            <p class="font-bold">Екатерина С.</p>
-                            <p class="text-gray-500 text-sm">Владелец Mercedes-AMG GT</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section id="faq" class="py-24 container mx-auto px-4 md:px-6 max-w-4xl">
-        <h2 class="text-center text-3xl md:text-4xl font-bold mb-16 uppercase">Частые вопросы</h2>
-        <div x-data="{ active: 0 }" class="space-y-4">
-            <div class="border border-white/10 rounded-2xl overflow-hidden bg-zinc-900/20">
-                <button @click="active = (active === 1 ? 0 : 1)" class="w-full flex justify-between items-center p-6 text-left hover:bg-white/5 transition-all">
-                    <span class="font-bold">Какие документы нужны для покупки в кредит?</span>
-                    <i class="fa-solid transition-transform duration-300" :class="active === 1 ? 'fa-minus rotate-180' : 'fa-plus'"></i>
-                </button>
-                <div x-show="active === 1" x-cloak class="p-6 pt-0 text-gray-400 leading-relaxed">
-                    Для оформления заявки достаточно паспорта и водительского удостоверения. Решение банка занимает от 15 минут до 1 часа прямо в нашем салоне.
-                </div>
-            </div>
-            <div class="border border-white/10 rounded-2xl overflow-hidden bg-zinc-900/20">
-                <button @click="active = (active === 2 ? 0 : 2)" class="w-full flex justify-between items-center p-6 text-left hover:bg-white/5 transition-all">
-                    <span class="font-bold">Как проходит процедура тест-драйва?</span>
-                    <i class="fa-solid transition-transform duration-300" :class="active === 2 ? 'fa-minus rotate-180' : 'fa-plus'"></i>
-                </button>
-                <div x-show="active === 2" x-cloak class="p-6 pt-0 text-gray-400 leading-relaxed">
-                    Тест-драйв проводится по предварительной записи. Вам необходимо иметь при себе стаж вождения от 2-х лет. Маршрут включает городские условия и скоростную трассу.
-                </div>
-            </div>
-            <div class="border border-white/10 rounded-2xl overflow-hidden bg-zinc-900/20">
-                <button @click="active = (active === 3 ? 0 : 3)" class="w-full flex justify-between items-center p-6 text-left hover:bg-white/5 transition-all">
-                    <span class="font-bold">Все ли автомобили с ПТС в наличии?</span>
-                    <i class="fa-solid transition-transform duration-300" :class="active === 3 ? 'fa-minus rotate-180' : 'fa-plus'"></i>
-                </button>
-                <div x-show="active === 3" x-cloak class="p-6 pt-0 text-gray-400 leading-relaxed">
-                    Да, 100% представленных в шоуруме автомобилей имеют оригинальный бумажный или электронный ПТС и готовы к сделке в день обращения.
-                </div>
-            </div>
-            <div class="border border-white/10 rounded-2xl overflow-hidden bg-zinc-900/20">
-                <button @click="active = (active === 4 ? 0 : 4)" class="w-full flex justify-between items-center p-6 text-left hover:bg-white/5 transition-all">
-                    <span class="font-bold">Возможна ли доставка в другой регион?</span>
-                    <i class="fa-solid transition-transform duration-300" :class="active === 4 ? 'fa-minus rotate-180' : 'fa-plus'"></i>
-                </button>
-                <div x-show="active === 4" x-cloak class="p-6 pt-0 text-gray-400 leading-relaxed">
-                    Мы осуществляем доставку крытым автовозом в любую точку РФ. Транспортировка застрахована на полную стоимость автомобиля.
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Lead Form & Contacts -->
-    <section id="contacts" class="py-24 container mx-auto px-4 md:px-6">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div class="bg-primary p-10 md:p-14 rounded-[3rem] text-white relative overflow-hidden">
-                <div class="absolute top-0 right-0 -m-12 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
-                <h3 class="text-3xl font-bold mb-4">Оставить заявку</h3>
-                <p class="mb-10 text-blue-100 italic">Получите индивидуальное предложение и персональную скидку до конца недели.</p>
-                <form action="https://formspree.io/f/your-form-id" method="POST" class="space-y-6">
-                    <div>
-                        <label class="block text-sm font-medium mb-2 opacity-80 uppercase tracking-tighter">Ваше имя</label>
-                        <input type="text" name="name" required
-                               class="w-full bg-white/10 border border-white/20 rounded-2xl py-4 px-6 focus:outline-none focus:ring-2 focus:ring-white/50 placeholder-white/40" 
-                               placeholder="Иван Иванов">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium mb-2 opacity-80 uppercase tracking-tighter">Телефон</label>
-                        <input type="tel" name="phone" required
-                               class="w-full bg-white/10 border border-white/20 rounded-2xl py-4 px-6 focus:outline-none focus:ring-2 focus:ring-white/50 placeholder-white/40 phone-mask" 
-                               placeholder="+7 (___) ___-__-__">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium mb-2 opacity-80 uppercase tracking-tighter">Модель авто</label>
-                        <input type="text" name="car_model"
-                               class="w-full bg-white/10 border border-white/20 rounded-2xl py-4 px-6 focus:outline-none focus:ring-2 focus:ring-white/50 placeholder-white/40" 
-                               placeholder="Porsche 911 Turbo S (необязательно)">
-                    </div>
-                    <button type="submit"
-                            class="w-full bg-white text-primary py-5 rounded-2xl font-black text-lg uppercase shadow-xl hover:bg-blue-50 transition-colors">
-                        Получить предложение
-                    </button>
-                </form>
-            </div>
-            <div class="space-y-12">
+        <section class="mx-auto max-w-[1440px] px-5 py-24 md:px-10 lg:px-20 lg:py-32">
+            <div class="grid gap-6 border-y border-silver/10 py-8 sm:grid-cols-2 lg:grid-cols-4">
                 <div>
-                    <h2 class="text-4xl font-bold mb-8 uppercase italic tracking-tighter">Наш адрес</h2>
-                    <div class="space-y-6">
-                        <div class="flex items-start gap-5">
-                            <div class="bg-primary/20 p-4 rounded-2xl text-primary"><i class="fa-solid fa-location-dot text-2xl"></i></div>
+                    <p class="font-display text-4xl text-gold">2018</p>
+                    <p class="mt-2 text-xs font-semibold uppercase tracking-[0.16em] text-muted">работаем с</p>
+                </div>
+                <div>
+                    <p class="font-display text-4xl text-gold">900+</p>
+                    <p class="mt-2 text-xs font-semibold uppercase tracking-[0.16em] text-muted">закрытых сделок</p>
+                </div>
+                <div>
+                    <p class="font-display text-4xl text-gold">120</p>
+                    <p class="mt-2 text-xs font-semibold uppercase tracking-[0.16em] text-muted">пунктов проверки</p>
+                </div>
+                <div>
+                    <p class="font-display text-4xl text-gold">24 ч</p>
+                    <p class="mt-2 text-xs font-semibold uppercase tracking-[0.16em] text-muted">резерв авто</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="inventory" x-data="{ filter: 'all' }" class="mx-auto max-w-[1440px] px-5 pb-24 md:px-10 lg:px-20 lg:pb-32">
+            <div class="reveal mb-14 flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
+                <div>
+                    <p class="mb-4 text-xs font-bold uppercase tracking-[0.22em] text-gold">Актуальная витрина</p>
+                    <h2 class="font-display text-4xl font-semibold tracking-normal text-platinum md:text-6xl">Наша коллекция</h2>
+                    <div class="mt-5 h-px w-28 bg-gold"></div>
+                </div>
+                <p class="max-w-xl leading-8 text-muted">
+                    Все машины проходят техническую диагностику, проверку кузова, документов, истории владения и ограничений перед показом клиенту.
+                </p>
+            </div>
+
+            <div class="reveal mb-10 flex flex-wrap gap-3">
+                <button @click="filter = 'all'" :class="filter === 'all' ? 'bg-gold text-[#241a00]' : 'glass-card text-muted hover:text-silver'" class="px-5 py-3 text-xs font-bold uppercase tracking-[0.14em] transition">Все</button>
+                <button @click="filter = 'stock'" :class="filter === 'stock' ? 'bg-gold text-[#241a00]' : 'glass-card text-muted hover:text-silver'" class="px-5 py-3 text-xs font-bold uppercase tracking-[0.14em] transition">В наличии</button>
+                <button @click="filter = 'order'" :class="filter === 'order' ? 'bg-gold text-[#241a00]' : 'glass-card text-muted hover:text-silver'" class="px-5 py-3 text-xs font-bold uppercase tracking-[0.14em] transition">Под заказ</button>
+                <button @click="filter = 'sport'" :class="filter === 'sport' ? 'bg-gold text-[#241a00]' : 'glass-card text-muted hover:text-silver'" class="px-5 py-3 text-xs font-bold uppercase tracking-[0.14em] transition">Спорткары</button>
+                <button @click="filter = 'suv'" :class="filter === 'suv' ? 'bg-gold text-[#241a00]' : 'glass-card text-muted hover:text-silver'" class="px-5 py-3 text-xs font-bold uppercase tracking-[0.14em] transition">SUV</button>
+            </div>
+
+            <div class="grid grid-cols-1 gap-8 lg:grid-cols-12">
+                <article x-show="filter === 'all' || filter === 'stock' || filter === 'sport'" class="reveal group relative min-h-[560px] overflow-hidden glass-card lg:col-span-7">
+                    <img src="https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?auto=format&amp;fit=crop&amp;q=90&amp;w=1200" class="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105" alt="Porsche 911 Turbo S">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
+                    <div class="absolute inset-x-0 bottom-0 p-6 md:p-8">
+                        <div class="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
                             <div>
-                                <p class="text-lg font-bold">г. Москва, ул. Автомобильная, 22</p>
-                                <p class="text-gray-400">Бизнес-центр "Драйв", 1 этаж</p>
-                                <p class="text-gray-500 text-sm mt-1">м. Деловой центр, 5 мин пешком</p>
+                                <p class="mb-3 text-xs font-bold uppercase tracking-[0.18em] text-gold">В наличии · диагностика готова</p>
+                                <h3 class="font-display text-4xl text-white md:text-5xl">Porsche 911 Turbo S</h3>
+                                <p class="mt-3 text-sm text-muted">2023 · 8 400 км · полный привод · 650 л.с.</p>
+                            </div>
+                            <p class="font-display text-3xl text-gold">24,5 млн ₽</p>
+                        </div>
+                        <button @click="$dispatch('open-modal')" class="mt-7 w-full border border-silver/30 py-4 text-xs font-bold uppercase tracking-[0.16em] transition hover:bg-silver hover:text-ink">
+                            Запросить отчет
+                        </button>
+                    </div>
+                </article>
+
+                <article x-show="filter === 'all' || filter === 'stock' || filter === 'sport'" class="reveal group relative min-h-[560px] overflow-hidden glass-card lg:col-span-5" style="transition-delay: 120ms;">
+                    <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&amp;fit=crop&amp;q=90&amp;w=1000" class="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105" alt="BMW M8 Competition">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-transparent"></div>
+                    <div class="absolute inset-x-0 bottom-0 p-6 md:p-8">
+                        <p class="mb-3 text-xs font-bold uppercase tracking-[0.18em] text-gold">В наличии · trade-in возможен</p>
+                        <h3 class="font-display text-4xl text-white">BMW M8 Competition</h3>
+                        <div class="mt-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                            <p class="text-sm text-muted">2022 · 19 700 км · xDrive</p>
+                            <p class="font-display text-3xl text-gold">18,9 млн ₽</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article x-show="filter === 'all' || filter === 'order' || filter === 'sport'" class="reveal overflow-hidden glass-card lg:col-span-12" style="transition-delay: 180ms;">
+                    <div class="grid min-h-[520px] grid-cols-1 lg:grid-cols-[1.7fr_1fr]">
+                        <div class="group relative min-h-[340px] overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&amp;fit=crop&amp;q=90&amp;w=1400" class="h-full w-full object-cover transition duration-700 group-hover:scale-105" alt="Mercedes-AMG GT">
+                        </div>
+                        <div class="flex flex-col justify-center p-7 md:p-10 lg:p-12">
+                            <p class="mb-5 text-xs font-bold uppercase tracking-[0.22em] text-gold">Под заказ · срок 21-35 дней</p>
+                            <h3 class="font-display text-4xl text-platinum md:text-5xl">Mercedes-AMG GT</h3>
+                            <p class="mt-5 leading-8 text-muted">2024, Европа, пробег до 5 000 км. Подберем комплектацию, проверим историю и рассчитаем полную стоимость до постановки на учет.</p>
+                            <div class="mt-8">
+                                <span class="block text-xs font-semibold uppercase tracking-[0.16em] text-muted">Стоимость</span>
+                                <span class="mt-2 block font-display text-4xl text-gold">от 16,2 млн ₽</span>
+                            </div>
+                            <button @click="$dispatch('open-modal')" class="mt-8 bg-silver px-8 py-4 text-xs font-bold uppercase tracking-[0.14em] text-ink transition hover:bg-gold">
+                                Рассчитать привоз
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <article x-show="filter === 'all' || filter === 'stock' || filter === 'suv'" class="reveal overflow-hidden glass-card lg:col-span-12" style="transition-delay: 240ms;">
+                    <div class="grid min-h-[420px] grid-cols-1 lg:grid-cols-[1fr_1.4fr]">
+                        <div class="flex flex-col justify-center p-7 md:p-10 lg:p-12">
+                            <p class="mb-5 text-xs font-bold uppercase tracking-[0.22em] text-gold">В наличии · 1 владелец</p>
+                            <h3 class="font-display text-4xl text-platinum md:text-5xl">Range Rover Autobiography</h3>
+                            <p class="mt-5 leading-8 text-muted">2023 · 12 200 км · дизель · 4WD. Проверенный SUV с гарантией на ключевые узлы и готовым пакетом документов.</p>
+                            <p class="mt-7 font-display text-4xl text-gold">21,7 млн ₽</p>
+                        </div>
+                        <div class="group min-h-[320px] overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1606016159991-dfe4f2746ad5?auto=format&amp;fit=crop&amp;q=90&amp;w=1200" class="h-full w-full object-cover transition duration-700 group-hover:scale-105" alt="Range Rover Autobiography">
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="process" class="bg-[#0e0e0e] py-24 lg:py-32">
+            <div class="mx-auto max-w-[1440px] px-5 md:px-10 lg:px-20">
+                <div class="reveal mb-14 max-w-3xl">
+                    <p class="mb-4 text-xs font-bold uppercase tracking-[0.22em] text-gold">Сценарий сделки</p>
+                    <h2 class="font-display text-4xl font-semibold text-platinum md:text-6xl">Покупка без лишней неопределенности</h2>
+                </div>
+
+                <div class="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4">
+                    <div class="reveal glass-card p-7">
+                        <span class="mb-10 block font-display text-4xl text-gold">01</span>
+                        <h3 class="font-display text-2xl text-platinum">Подбор</h3>
+                        <p class="mt-4 text-sm leading-7 text-muted">Фиксируем бюджет, комплектацию, цвет, пробег и допустимые условия сделки.</p>
+                    </div>
+                    <div class="reveal glass-card p-7" style="transition-delay: 80ms;">
+                        <span class="mb-10 block font-display text-4xl text-gold">02</span>
+                        <h3 class="font-display text-2xl text-platinum">Проверка</h3>
+                        <p class="mt-4 text-sm leading-7 text-muted">Проверяем кузов, агрегаты, историю, залоги, ограничения и документы.</p>
+                    </div>
+                    <div class="reveal glass-card p-7" style="transition-delay: 160ms;">
+                        <span class="mb-10 block font-display text-4xl text-gold">03</span>
+                        <h3 class="font-display text-2xl text-platinum">Показ</h3>
+                        <p class="mt-4 text-sm leading-7 text-muted">Готовим автомобиль к просмотру, тест-драйву и независимой проверке.</p>
+                    </div>
+                    <div class="reveal glass-card p-7" style="transition-delay: 240ms;">
+                        <span class="mb-10 block font-display text-4xl text-gold">04</span>
+                        <h3 class="font-display text-2xl text-platinum">Оформление</h3>
+                        <p class="mt-4 text-sm leading-7 text-muted">Сопровождаем оплату, кредит, trade-in, страхование и доставку в регион.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="why-us" class="relative overflow-hidden bg-panel py-24 lg:py-32">
+            <div class="pointer-events-none absolute right-0 top-0 hidden h-full w-1/3 select-none font-display text-[360px] leading-none text-white/5 lg:block">LX</div>
+            <div class="relative z-10 mx-auto grid max-w-[1440px] grid-cols-1 gap-16 px-5 md:px-10 lg:grid-cols-2 lg:px-20">
+                <div class="reveal">
+                    <p class="mb-4 text-xs font-bold uppercase tracking-[0.22em] text-gold">Проверка и гарантии</p>
+                    <h2 class="font-display text-4xl font-semibold text-platinum md:text-6xl">Почему выбирают нас</h2>
+                    <p class="mt-8 max-w-xl text-lg leading-8 text-muted">Перед сделкой клиент получает понятный отчет: техническое состояние, юридическая чистота, история эксплуатации, условия гарантии и расчет полной стоимости владения.</p>
+
+                    <div class="mt-12 space-y-10">
+                        <div class="flex gap-5">
+                            <div class="glass-card flex h-16 w-16 shrink-0 items-center justify-center text-gold">
+                                <span class="material-symbols-outlined text-3xl">verified</span>
+                            </div>
+                            <div>
+                                <h3 class="font-display text-2xl text-platinum">Юридическая чистота</h3>
+                                <p class="mt-2 text-sm leading-7 text-muted">Проверяем ограничения, залоги, собственников, ПТС/ЭПТС и соответствие документов.</p>
                             </div>
                         </div>
-                        <div class="flex items-start gap-5">
-                            <div class="bg-primary/20 p-4 rounded-2xl text-primary"><i class="fa-solid fa-clock text-2xl"></i></div>
+                        <div class="flex gap-5">
+                            <div class="glass-card flex h-16 w-16 shrink-0 items-center justify-center text-gold">
+                                <span class="material-symbols-outlined text-3xl">manufacturing</span>
+                            </div>
                             <div>
-                                <p class="text-lg font-bold">Ежедневно: 09:00 — 21:00</p>
-                                <p class="text-gray-400">Без перерывов и выходных</p>
+                                <h3 class="font-display text-2xl text-platinum">Диагностика по 120 пунктам</h3>
+                                <p class="mt-2 text-sm leading-7 text-muted">Кузов, двигатель, коробка, ходовая, электроника, салон и компьютерная диагностика.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-5">
+                            <div class="glass-card flex h-16 w-16 shrink-0 items-center justify-center text-gold">
+                                <span class="material-symbols-outlined text-3xl">workspace_premium</span>
+                            </div>
+                            <div>
+                                <h3 class="font-display text-2xl text-platinum">Консьерж-сервис</h3>
+                                <p class="mt-2 text-sm leading-7 text-muted">Trade-in, кредит, страховка, доставка по РФ и персональный менеджер на каждом этапе.</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="w-full h-80 rounded-[2rem] overflow-hidden border border-white/10">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2245.2832821422784!2d37.6203932159306!3d55.753215980551066!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54a5a060936b7%3A0x6b44a30e8c057633!2z0JrRgNC10LzQu9C8!5e0!3m2!1sru!2sru!4v1625470000000!5m2!1sru!2sru" 
-                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" title="Карта проезда к автосалону Luxe Auto в Москве"></iframe>
+
+                <div class="reveal relative hidden min-h-[680px] lg:block" style="transition-delay: 160ms;">
+                    <img src="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&amp;fit=crop&amp;q=90&amp;w=1200" alt="Диагностика премиального автомобиля" class="h-full w-full object-cover grayscale brightness-75 transition duration-700 hover:grayscale-0">
+                    <div class="glass-card absolute -bottom-8 -left-8 max-w-xs p-8 shadow-glow">
+                        <span class="font-display text-6xl text-gold">900+</span>
+                        <p class="mt-3 text-xs font-bold uppercase tracking-[0.16em] text-platinum">сделок с премиальными автомобилями</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
-    <footer class="py-12 border-t border-white/5 bg-zinc-950">
-        <div class="container mx-auto px-4 md:px-6 flex flex-col md:flex-row justify-between items-center gap-8">
-            <div class="text-center md:text-left">
-                <a href="#" class="text-xl font-bold tracking-tighter">LX LUXE AUTO</a>
-                <p class="text-gray-500 text-sm mt-2">&copy; 2024 Все права защищены. Премиум автодилер Luxe Auto в Москве.</p>
+        <section id="faq" class="mx-auto max-w-4xl px-5 py-24 md:px-10 lg:py-32">
+            <div class="reveal mb-14 text-center">
+                <p class="mb-4 text-xs font-bold uppercase tracking-[0.22em] text-gold">FAQ</p>
+                <h2 class="font-display text-4xl font-semibold text-platinum md:text-6xl">Частые вопросы</h2>
             </div>
-            <div class="flex gap-6 text-xl text-gray-400">
-                <a href="https://t.me/luxeauto" target="_blank" rel="noopener noreferrer" class="hover:text-primary transition" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
-                <a href="https://wa.me/79001234567" target="_blank" rel="noopener noreferrer" class="hover:text-primary transition" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-                <a href="https://youtube.com/@luxeauto" target="_blank" rel="noopener noreferrer" class="hover:text-primary transition" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-                <a href="https://vk.com/luxeauto" target="_blank" rel="noopener noreferrer" class="hover:text-primary transition" aria-label="VK"><i class="fa-brands fa-vk"></i></a>
+
+            <div x-data="{ active: 1 }" class="reveal space-y-4">
+                <div class="overflow-hidden glass-card">
+                    <button @click="active = active === 1 ? 0 : 1" class="flex w-full items-center justify-between gap-4 p-6 text-left transition hover:bg-white/[0.03] md:p-8">
+                        <span class="font-display text-2xl text-platinum">Можно ли проверить автомобиль у независимого эксперта?</span>
+                        <span class="material-symbols-outlined text-gold transition-transform" :class="active === 1 ? 'rotate-180' : ''">expand_more</span>
+                    </button>
+                    <div x-show="active === 1" x-transition x-cloak class="px-6 pb-7 leading-8 text-muted md:px-8">
+                        Да. Мы заранее готовим автомобиль и документы, а также можем организовать подъемник, компьютерную диагностику и осмотр кузова.
+                    </div>
+                </div>
+
+                <div class="overflow-hidden glass-card">
+                    <button @click="active = active === 2 ? 0 : 2" class="flex w-full items-center justify-between gap-4 p-6 text-left transition hover:bg-white/[0.03] md:p-8">
+                        <span class="font-display text-2xl text-platinum">Какие документы нужны для кредита?</span>
+                        <span class="material-symbols-outlined text-gold transition-transform" :class="active === 2 ? 'rotate-180' : ''">expand_more</span>
+                    </button>
+                    <div x-show="active === 2" x-transition x-cloak class="px-6 pb-7 leading-8 text-muted md:px-8">
+                        Обычно достаточно паспорта и водительского удостоверения. Финальные условия зависят от банка, автомобиля и первоначального взноса.
+                    </div>
+                </div>
+
+                <div class="overflow-hidden glass-card">
+                    <button @click="active = active === 3 ? 0 : 3" class="flex w-full items-center justify-between gap-4 p-6 text-left transition hover:bg-white/[0.03] md:p-8">
+                        <span class="font-display text-2xl text-platinum">Можно ли купить автомобиль из другого города?</span>
+                        <span class="material-symbols-outlined text-gold transition-transform" :class="active === 3 ? 'rotate-180' : ''">expand_more</span>
+                    </button>
+                    <div x-show="active === 3" x-transition x-cloak class="px-6 pb-7 leading-8 text-muted md:px-8">
+                        Да. Мы проводим видеоосмотр, отправляем отчет, согласуем договор дистанционно и доставляем автомобиль крытым автовозом.
+                    </div>
+                </div>
             </div>
-            <div class="text-sm text-gray-500">
-                <a href="#" class="hover:underline">Политика конфиденциальности</a>
+        </section>
+
+        <section id="contacts" class="bg-[#0e0e0e] py-24 lg:py-32">
+            <div class="mx-auto grid max-w-[1440px] grid-cols-1 gap-12 px-5 md:px-10 lg:grid-cols-[1fr_0.9fr] lg:px-20">
+                <div class="reveal glass-card p-7 md:p-10">
+                    <p class="mb-4 text-xs font-bold uppercase tracking-[0.22em] text-gold">Персональный подбор</p>
+                    <h2 class="font-display text-4xl font-semibold text-platinum md:text-6xl">Получите расчет под ваш бюджет</h2>
+                    <p class="mt-6 max-w-2xl leading-8 text-muted">Оставьте контакты, и менеджер пришлет 3-5 подходящих вариантов с ценой, пробегом, условиями покупки и доставкой.</p>
+
+                    <form class="mt-10 grid gap-5">
+                        <div>
+                            <label class="mb-2 block text-xs font-bold uppercase tracking-[0.14em] text-muted">Ваше имя</label>
+                            <input type="text" class="w-full border-silver/15 bg-white/5 px-5 py-4 text-platinum placeholder:text-muted/50 focus:border-gold focus:ring-gold/30" placeholder="Иван">
+                        </div>
+                        <div>
+                            <label class="mb-2 block text-xs font-bold uppercase tracking-[0.14em] text-muted">Телефон или мессенджер</label>
+                            <input type="tel" class="w-full border-silver/15 bg-white/5 px-5 py-4 text-platinum placeholder:text-muted/50 focus:border-gold focus:ring-gold/30" placeholder="+7 (___) ___-__-__">
+                        </div>
+                        <div>
+                            <label class="mb-2 block text-xs font-bold uppercase tracking-[0.14em] text-muted">Что ищете</label>
+                            <select class="w-full border-silver/15 bg-white/5 px-5 py-4 text-platinum focus:border-gold focus:ring-gold/30">
+                                <option class="text-ink">Спорткар</option>
+                                <option class="text-ink">Бизнес-седан</option>
+                                <option class="text-ink">SUV</option>
+                                <option class="text-ink">Еще не решил</option>
+                            </select>
+                        </div>
+                        <button class="bg-silver px-7 py-5 text-sm font-extrabold uppercase tracking-[0.14em] text-ink transition hover:bg-gold">
+                            Получить подбор
+                        </button>
+                        <p class="text-xs leading-6 text-muted/70">Нажимая кнопку, вы соглашаетесь на обработку персональных данных и обратную связь по заявке.</p>
+                    </form>
+                </div>
+
+                <div class="reveal flex flex-col justify-between gap-8" style="transition-delay: 140ms;">
+                    <div>
+                        <p class="mb-4 text-xs font-bold uppercase tracking-[0.22em] text-gold">Контакты</p>
+                        <h2 class="font-display text-4xl font-semibold text-platinum">Шоурум по предварительной записи</h2>
+                        <div class="mt-8 space-y-6">
+                            <div class="flex gap-4">
+                                <div class="glass-card flex h-14 w-14 shrink-0 items-center justify-center text-gold"><span class="material-symbols-outlined">location_on</span></div>
+                                <div>
+                                    <p class="font-bold text-platinum">Москва, ул. Автомобильная, 22</p>
+                                    <p class="mt-1 text-sm text-muted">БЦ "Драйв", 1 этаж, гостевая парковка у входа</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4">
+                                <div class="glass-card flex h-14 w-14 shrink-0 items-center justify-center text-gold"><span class="material-symbols-outlined">schedule</span></div>
+                                <div>
+                                    <p class="font-bold text-platinum">Ежедневно с 09:00 до 21:00</p>
+                                    <p class="mt-1 text-sm text-muted">Показы спорткаров и тест-драйвы по записи</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4">
+                                <div class="glass-card flex h-14 w-14 shrink-0 items-center justify-center text-gold"><span class="material-symbols-outlined">call</span></div>
+                                <div>
+                                    <a href="tel:+79001234567" class="font-bold text-platinum transition hover:text-gold">+7 (900) 123-45-67</a>
+                                    <p class="mt-1 text-sm text-muted">Telegram и WhatsApp доступны по этому номеру</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="h-80 overflow-hidden border border-silver/10 opacity-80 grayscale">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2245.2832821422784!2d37.6203932159306!3d55.753215980551066!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54a5a060936b7%3A0x6b44a30e8c057633!2z0JrRgNC10LzQu9G8!5e0!3m2!1sru!2sru!4v1625470000000!5m2!1sru!2sru" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" title="Карта шоурума LX LUXE AUTO"></iframe>
+                    </div>
+                </div>
             </div>
+        </section>
+    </main>
+
+    <footer class="border-t border-silver/10 bg-[#0a0a0a] py-14">
+        <div class="mx-auto flex max-w-[1440px] flex-col items-center justify-between gap-8 px-5 text-center md:px-10 lg:flex-row lg:px-20 lg:text-left">
+            <div>
+                <a href="#" class="font-display text-3xl text-silver">LX <span class="text-gold">LUXE</span> AUTO</a>
+                <p class="mt-3 text-sm text-muted/60">&copy; 2026 Премиальные автомобили. Информация на сайте не является публичной офертой.</p>
+            </div>
+            <div class="flex flex-wrap justify-center gap-6 text-xs font-semibold uppercase tracking-[0.16em] text-muted">
+                <a href="#inventory" class="transition hover:text-gold">Каталог</a>
+                <a href="#process" class="transition hover:text-gold">Сделка</a>
+                <a href="#why-us" class="transition hover:text-gold">Проверка</a>
+                <a href="#contacts" class="transition hover:text-gold">Контакты</a>
+            </div>
+            <a href="#" class="text-xs font-semibold uppercase tracking-[0.16em] text-muted/70 transition hover:text-gold">Политика конфиденциальности</a>
         </div>
     </footer>
 
-    <!-- Modal Window (Call Request) -->
-    <div x-data="{ open: false, submitted: false }" 
-         @open-modal.window="open = true; submitted = false" 
-         @keydown.escape.window="open = false"
-         class="relative z-[100]" 
-         x-cloak>
-        <div x-show="open" 
-             x-transition:opacity
-             class="fixed inset-0 bg-black/80 backdrop-blur-sm"></div>
-        <div x-show="open" 
-             x-transition:scale.95
-             class="fixed inset-0 flex items-center justify-center p-4">
-            <div @click.away="open = false" class="bg-zinc-900 border border-white/10 p-10 rounded-[2.5rem] max-w-md w-full relative shadow-3xl">
-                <button @click="open = false" class="absolute top-6 right-6 text-gray-500 hover:text-white" aria-label="Закрыть">
-                    <i class="fa-solid fa-xmark text-2xl"></i>
+    <div
+        x-data="{ open: false }"
+        @open-modal.window="open = true"
+        @keydown.escape.window="open = false"
+        class="relative z-[100]"
+        x-cloak
+    >
+        <div x-show="open" x-transition.opacity class="fixed inset-0 bg-black/80 backdrop-blur-sm"></div>
+
+        <div x-show="open" x-transition class="fixed inset-0 flex items-center justify-center p-4">
+            <div @click.away="open = false" class="relative w-full max-w-md border border-silver/15 bg-[#0e0e0e] p-7 shadow-2xl md:p-9">
+                <button @click="open = false" class="absolute right-5 top-5 text-muted transition hover:text-silver" aria-label="Закрыть">
+                    <span class="material-symbols-outlined text-3xl">close</span>
                 </button>
-                <div x-show="!submitted">
-                    <h3 class="text-3xl font-bold mb-4 uppercase">Заказать звонок</h3>
-                    <p class="text-gray-400 mb-8">Менеджер перезвонит вам в течение 5 минут.</p>
-                    <form @submit.prevent="submitted = true" class="space-y-6">
-                        <input type="text" name="name" required
-                               class="w-full bg-white/5 border border-white/10 rounded-2xl py-4 px-6 focus:outline-none focus:ring-2 focus:ring-primary" 
-                               placeholder="Ваше имя">
-                        <input type="tel" name="phone" required
-                               class="w-full bg-white/5 border border-white/10 rounded-2xl py-4 px-6 focus:outline-none focus:ring-2 focus:ring-primary phone-mask" 
-                               placeholder="+7 (___) ___-__-__">
-                        <button type="submit"
-                                class="w-full bg-primary py-5 rounded-2xl font-bold text-lg hover:bg-blue-600 transition shadow-lg shadow-primary/20">
-                            Отправить
-                        </button>
-                    </form>
-                </div>
-                <div x-show="submitted" x-transition>
-                    <div class="text-center py-8">
-                        <div class="w-20 h-20 bg-primary/20 rounded-full flex items-center justify-center text-primary text-5xl mx-auto mb-6">
-                            <i class="fa-solid fa-check"></i>
-                        </div>
-                        <h3 class="text-3xl font-bold mb-4 uppercase">Спасибо!</h3>
-                        <p class="text-gray-400 mb-8">Ваша заявка принята. Менеджер свяжется с вами в ближайшее время.</p>
-                        <button @click="open = false" class="bg-primary hover:bg-blue-600 px-10 py-4 rounded-2xl font-bold transition">
-                            Закрыть
-                        </button>
-                    </div>
-                </div>
+                <h3 class="pr-8 font-display text-4xl text-platinum">Получить подбор</h3>
+                <p class="mt-4 leading-7 text-muted">Менеджер уточнит задачу и пришлет варианты с расчетом полной стоимости.</p>
+                <form class="mt-7 space-y-5">
+                    <input type="text" class="w-full border-silver/15 bg-white/5 px-5 py-4 text-platinum placeholder:text-muted/50 focus:border-gold focus:ring-gold/30" placeholder="Ваше имя">
+                    <input type="tel" class="w-full border-silver/15 bg-white/5 px-5 py-4 text-platinum placeholder:text-muted/50 focus:border-gold focus:ring-gold/30" placeholder="+7 (___) ___-__-__">
+                    <textarea rows="3" class="w-full resize-none border-silver/15 bg-white/5 px-5 py-4 text-platinum placeholder:text-muted/50 focus:border-gold focus:ring-gold/30" placeholder="Например: Porsche 911 до 25 млн ₽"></textarea>
+                    <button class="w-full bg-silver px-6 py-5 text-sm font-bold uppercase tracking-[0.14em] text-ink transition hover:bg-gold">
+                        Отправить заявку
+                    </button>
+                </form>
             </div>
         </div>
     </div>
 
-    <!-- Инициализация маски телефона -->
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            if (typeof Inputmask !== 'undefined') {
-                Inputmask({
-                    mask: '+7 (999) 999-99-99',
-                    showMaskOnHover: false,
-                    showMaskOnFocus: true,
-                    placeholder: '_'
-                }).mask('.phone-mask');
-            }
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        document.querySelectorAll('.reveal').forEach((element) => {
+            revealObserver.observe(element);
         });
     </script>
-
 </body>
 </html>
